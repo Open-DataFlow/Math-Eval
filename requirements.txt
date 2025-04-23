@@ -1,0 +1,7 @@
+
+# 核心依赖
+vllm>=0.4.1
+math_verify
+numpy
+pandas
+word2number
