@@ -1,0 +1,23 @@
+benchmarks: "aime24,gsm8k,math,amc23,olympiadbench,gaokao2024_mix,minerva_math"
+task_name: test
+
+model_args:
+  model_path: /mnt/public/model/huggingface/Qwen2.5-3B-Instruct
+  temperature: 0.0
+  top_p: 0.95
+  top_k: -1
+  max_model_len: 8192
+  max_tokens: 4096
+  tensor_parallel_size: 1
+  pipeline_parallel_size: 8
+
+
+xverify_args:
+  inference_mode: "custom"
+  model_name:
+  model_path_or_url:
+  api_key:
+  process_num: 
+
+verify_method: "qwen_eval"
+prompt_template: "qwen25-math-cot"
