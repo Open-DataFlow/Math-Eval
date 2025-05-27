@@ -35,7 +35,7 @@ Step 2. 读取数据
 benchmark_list = config["benchmarks"].split(",")
 df = pd.DataFrame()
 for benchmark in benchmark_list:
-    bmk = pd.read_json(f"benchmarks/{benchmark}.jsonl", orient="records", lines=True)
+    bmk = pd.read_json(f"bmk_category/modified_{benchmark}.jsonl", orient="records", lines=True)
     bmk["benchmark"] = benchmark
     df = pd.concat([df, bmk])
 
@@ -117,25 +117,3 @@ with open(os.path.join(results_dir, "results.json"), "w") as f:
     json.dump(result_json, f, ensure_ascii=False, indent=4)
 
 logger.info(f"Results saved to {results_dir}")
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
