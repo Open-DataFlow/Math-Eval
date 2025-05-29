@@ -1,13 +1,14 @@
 benchmarks: "aime24,gsm8k,math,amc23,olympiadbench,gaokao2024_mix,minerva_math"
-task_name: synthetic_math_1ep_llama_baseline
+task_name: test
+
 
 model_args:
-  model_path: /mnt/public/model/huggingface/Qwen2.5-3B-Instruct
-  temperature: 0.6
+  model_path: /mnt/public/model/huggingface/Qwen2.5-7B-Instruct
+  temperature: 0.0
   top_p: 0.95
   top_k: -1
   max_model_len: 16384
-  max_tokens: 4096
+  max_tokens: 16384
   tensor_parallel_size: 1
   pipeline_parallel_size: 8
 

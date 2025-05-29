@@ -34,7 +34,7 @@ def main():
     benchmark_list = config["benchmarks"].split(",")
     df = pd.DataFrame()
     for benchmark in benchmark_list:
-        bmk = pd.read_json(f"benchmarks/{benchmark}.jsonl",
+        bmk = pd.read_json(f"categoried/{benchmark}.jsonl",
                             orient="records", lines=True)
         bmk["benchmark"] = benchmark
         df = pd.concat([df, bmk], ignore_index=True)
