@@ -1,7 +1,22 @@
+# Math-Eval Requirements
 
-# 核心依赖
-vllm>=0.4.1
-math_verify
-numpy
-pandas
-word2number
+# Core Dependencies
+vllm>=0.4.1                    # High-performance inference engine
+math_verify>=0.1.0             # Mathematical verification library
+numpy>=1.21.0                  # Numerical computing
+pandas>=1.3.0                  # Data manipulation and analysis
+word2number>=1.1               # Text to number conversion
+
+# Configuration and Data Processing
+PyYAML>=6.0                    # YAML configuration file parsing
+jsonlines>=3.0.0               # JSON Lines format support
+
+# Async and Concurrency
+asyncio                        # Asynchronous programming (built-in)
+aiofiles>=0.8.0               # Asynchronous file operations
+
+# Logging and Utilities
+tqdm>=4.64.0                   # Progress bars
+colorlog>=6.6.0               # Colored logging output
+
+

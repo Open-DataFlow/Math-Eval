@@ -1,6 +1,8 @@
 # 使用vllm异步引擎，从而支持张量和数据同时并行
 import logging
 from vllm import AsyncEngineArgs,AsyncLLMEngine,SamplingParams
+from huggingface_hub import snapshot_download as sd_hf
+from modelscope.utils.hub import snapshot_download as sd_ms
 import pandas as pd
 import os
 import uuid
@@ -16,7 +18,13 @@ class VllmAsyncEngine:
         self.tensor_parallel_size = config.get("tensor_parallel_size",1)
         self.pipeline_parallel_size = config.get("pipeline_parallel_size",8)
         self.max_model_len = config.get("max_model_len",16384)
-        self.real_model_path = self.model_path
+        try:
+            self.real_model_path = sd_hf(self.model_path)
+        except Exception as e:
+            try:
+                self.real_model_path = sd_ms(self.model_path)
+            except Exception as e:
+                self.real_model_path = self.model_path
         self.engine = self.__init__engine()
         self.sampling_params = SamplingParams(
             temperature=self.temperature,

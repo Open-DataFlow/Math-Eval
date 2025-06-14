@@ -3,7 +3,7 @@ task_name: test
 
 
 model_args:
-  model_path: /mnt/public/model/huggingface/Qwen2.5-7B-Instruct
+  model_path: Qwen/Qwen2.5-7B-Instruct
   temperature: 0.0
   top_p: 0.95
   top_k: -1
